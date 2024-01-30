@@ -1,49 +1,20 @@
-<script setup>
-import HomeView from "@/views/HomeView.vue";
-import FilterView from "@/views/FilterView.vue"; // Import the FilterView component
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+  <div id="app">
 
-    <div class="wrapper">
-      <FilterView /> <!--FilterView component  -->
-      <HomeView msg="You did it!" />
-
-    </div>
-  </header>
-
-  <main>
-
-  </main>
+    <router-view />
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
+export default {
+  name: 'App',
+  components: {
 
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
   }
+};
+</script>
 
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
+<style>
+/* Global styles */
 </style>
