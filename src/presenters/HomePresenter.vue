@@ -1,15 +1,22 @@
 <template>
+  <FilterView/>
+  <shoppingListView/>
   <HomeView :meals="meals" />
   <MealView v v-if="selectedMeal" :meal="selectedMeal" @back="backToHome" />
+
 </template>
 
 <script>
 import HomeView from "@/views/HomeView.vue";
 import MealView from "@/views/MealView.vue";
+import FilterView from "@/views/FilterView.vue";
+import ShoppingListView from "@/views/ShoppingListView.vue";
 
 export default {
   name: "HomePresenter",
   components: {
+    FilterView,
+    ShoppingListView,
     MealView,
     HomeView
   },
