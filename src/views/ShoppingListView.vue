@@ -40,13 +40,22 @@ export default {
     return {
       searchQuery: "",
       allIngredients: [
-        { id: 1, name: "Ingredient 1" },
-        { id: 2, name: "Ingredient 2" },
-        { id: 3, name: "Ingredient 3" },
-        { id: 4, name: "Ingredient 4" },
-        { id: 5, name: "Ingredient 5" },
+        { id: 1, name: "Tomato" },
+        { id: 2, name: "Onion" },
+        { id: 3, name: "Garlic" },
+        { id: 4, name: "Salt" },
+        { id: 5, name: "Pepper" },
+        { id: 6, name: "Olive Oil" },
+        { id: 7, name: "Chicken" },
+        { id: 8, name: "Rice" },
+        { id: 9, name: "Broccoli" },
+        { id: 10, name: "Pasta" },
+        { id: 11, name: "Lemon" },
+        { id: 12, name: "Cumin" },
+        { id: 13, name: "Cilantro" },
         // Add more ingredients as needed
       ],
+
       shoppingList: [],
       showResults: false,
     };
