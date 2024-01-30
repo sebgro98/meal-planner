@@ -1,5 +1,16 @@
 <template>
   <div class="filter-view">
+    <!-- Filter Button -->
+    <div class="dropdown">
+    <button class="filter-Shooingbutton"  @click="toggleShoppingDropdown" >Shopping List</button>
+    <div v-show="isShoppingOpen" class="dropdown-content" >
+      <div>milk</div>
+      <div>egg</div>
+      <div>potato</div>
+      <!-- Add more categories as needed -->
+    </div>
+    </div>
+
     <!-- Main Category Dropdown -->
     <div class="dropdown">
       <button class="dropbtn" @click="toggleCategoryDropdown">Select Category</button>
@@ -44,13 +55,12 @@
         </li>
       </ul>
     </div>
-
-
     <!-- Add more sections/lists for other categories -->
-
     <!-- Filter Button -->
     <button @click="filterItems" class="filter-button">Filter</button>
   </div>
+
+
 </template>
 
 <script>
@@ -59,6 +69,7 @@ export default {
   data() {
     return {
       isCategoryDropdownOpen: false,
+      isShoppingOpen: false,
       selectedCategory: null,
       items: ["Tomato", "Onion", "Garlic", "Salt", "Pepper", "Olive Oil", "Chicken", "Rice", "Broccoli", "Pasta", "Lemon", "Cumin", "Cilantro"],
       selectedItems: [],
@@ -78,6 +89,9 @@ export default {
     },
     filterItems() {
       this.$emit("filter", this.selectedItems);
+    },
+    toggleShoppingDropdown(){
+      this.isShoppingOpen =  !this.isShoppingOpen;
     }
   }
 };
@@ -88,19 +102,28 @@ export default {
   /* Add styling for the main container */
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  margin-left: 15%;
-}
-
-.dropbtn {
-  padding: 10px 55px;
+.filter-Shooingbutton{
+  padding: 10px 20px;
+  font-size: 18px;
   background-color: #3dd944;
   border-radius: 10px;
   border-color: #dedede;
-  font-size: 20px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+
+}
+
+.dropbtn {
+  padding: 10px 18px;
+  background-color: #3dd944;
+  border-radius: 10px;
+  border-color: #dedede;
+  font-size: 18px;
   font-weight: 300;
+  margin-left: 2px;
 }
 
 .dropdown-content {
@@ -124,8 +147,9 @@ export default {
 }
 
 .filter-button {
-  padding: 15px;
+  padding: 5px 10px;
   margin: 10px;
+  font-size: 15px;
   background-color: #3dd944;
   color: black;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
