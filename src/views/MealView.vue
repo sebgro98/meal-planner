@@ -7,12 +7,17 @@
     <div class="container">
       <img src="../assets/burger.jpg" alt="Meal Image" class="meal-image">
 
+      <div class="title-container">
+        <h2 class="image-title">Burger Delight</h2>
+      </div>
+
       <div class="details-container">
         <div class="ingredients-container">
           <h2>Ingredients</h2>
           <ul class="ingredients-list">
             <li>Ingredient 1</li>
             <li>Ingredient 2</li>
+            <li>Ingredient 3</li>
             <!-- Add more ingredients as needed -->
           </ul>
         </div>
@@ -32,9 +37,9 @@
       <div class="steps-container">
         <h2>Steps</h2>
         <ol class="steps-list">
-          <li>Lorem ipsum dolor sit amet.</li>
-          <li>Consectetur adipiscing elit.</li>
-          <li>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+          <li>1. Lorem ipsum dolor sit amet.</li>
+          <li>2. Consectetur adipiscing elit.</li>
+          <li>3. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
           <!-- Add more steps as needed -->
         </ol>
       </div>
@@ -53,36 +58,53 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-color: #ffffff;
 }
 
 header {
-  background-color: #ececec;
+  background-color: #3dd944; /* Green */
   color: #fff;
-  padding: 10px;
   text-align: center;
   font-size: 30px;
+  border-radius: 15px;
+}
+
+.go-back {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  display: block; /* Make it a block-level element */
+  padding: 10px; /* Add padding for better aesthetics */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
 
 .container {
-  max-width: 600px;
   margin: 20px auto;
-  padding: 10px;
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.go-back {
-  text-decoration: none;
-  color: #333;
+.container h2 {
   font-weight: bold;
+}
+
+.title-container {
+  background-color: #3dd944;
+  text-align: center;
+  border-radius: 15px;
+  padding: 10px;
   margin-bottom: 10px;
+}
+
+.image-title {
+  color: #fff;
+  margin: 0; /* Remove margin for better alignment */
 }
 
 .meal-image {
   width: 100%;
-  max-height: 300px;
+  max-height: 250px; /* Adjust the maximum height */
   object-fit: cover;
   border-radius: 8px;
   margin-bottom: 10px;
@@ -95,27 +117,28 @@ header {
 }
 
 .ingredients-container,
-.nutrition-container {
-  flex: 1;
-}
-
-.ingredients-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.nutrition-info {
-  list-style-type: none;
-  padding: 0;
-  text-align: left;
-}
-
+.nutrition-container,
 .steps-container {
-  margin-top: 20px;
+  flex: 1;
+  background-color: #3dd944;
+  border-radius: 15px;
+  padding: 10px; /* Adjust the padding */
+  margin-bottom: 10px; /* Add margin for separation */
 }
 
+.ingredients-list,
+.nutrition-info,
 .steps-list {
-  list-style-type: decimal;
-  padding-left: 20px;
+  list-style-type: none;
+  padding: 0;
+  color: #fff; /* Set text color to white */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Add text shadow for better contrast */
+}
+
+/* Green and Black Theme */
+.ingredients-container h2,
+.nutrition-container h2,
+.steps-container h2 {
+  color: #fff; /* White */
 }
 </style>
