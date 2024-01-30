@@ -8,8 +8,11 @@
           @click="selectMeal(meal)"
       class="meal-card"
       >
-      <img :src="meal.image" :alt="meal.name" class="meal-image" />
-      <div class="meal-info">
+        <img :src="getImageUrl(meal.image)" :alt="meal.name" class="meal-image" />
+
+
+
+        <div class="meal-info">
         <h3>{{ meal.name }}</h3>
         <p>{{ meal.description }}</p>
         <ul class="meal-stats">
@@ -45,7 +48,14 @@ export default {
     showShoppingList() {
       // Implement your shopping list logic here
     },
+
+    getImageUrl(imageName) {
+      // Directly return the path as the images are in the public folder
+      return `/images/${imageName}`;
+    },
+
   },
+
 };
 </script>
 

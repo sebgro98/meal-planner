@@ -27,7 +27,7 @@ export default {
           {
             id: 1,
             name: 'Sunny Spinach Pie',
-            image: '../assets/spinach6.jpg',
+            image: 'spinach6.jpg',
             description: 'A delightful pie filled with spinach and feta cheese, perfect for a healthy meal.',
             ingredients: ['Spinach', 'Feta cheese', 'Pie crust', 'Eggs', 'Onion'],
             preparationTime: 45,
@@ -39,7 +39,7 @@ export default {
           {
             id: 2,
             name: 'Classic Cheeseburger',
-            image: ('../assets/burger.jpg'),
+            image: 'burger.jpg',
             description: 'Juicy beef patty with melting cheese, lettuce, tomato, and a touch of secret sauce.',
             ingredients: ['Beef patty', 'Cheese', 'Lettuce', 'Tomato', 'Buns', 'Secret sauce'],
             preparationTime: 30,
@@ -51,7 +51,7 @@ export default {
           {
             id: 3,
             name: 'Mediterranean Quinoa Salad',
-            image: ('../assets/quinoa-salad-500x500.jpg'),
+            image: ('quinoa-salad-500x500.jpg'),
             description: 'A light and refreshing salad packed with quinoa, cucumbers, tomatoes, and olives.',
             ingredients: ['Quinoa', 'Cucumber', 'Tomatoes', 'Olives', 'Feta cheese'],
             preparationTime: 20,
@@ -63,7 +63,7 @@ export default {
           {
             id: 4,
             name: 'Spicy Thai Noodles',
-            image: '../assets/Spicy-Thai-Noodles-SQ.jpg',
+            image: 'Spicy-Thai-Noodles-SQ.jpg',
             description: 'Stir-fried noodles in a spicy sauce with vegetables and your choice of protein.',
             ingredients: ['Rice noodles', 'Bell peppers', 'Eggs', 'Peanuts', 'Chili sauce', 'Protein choice'],
             preparationTime: 25,
@@ -75,7 +75,7 @@ export default {
         {
           id: 5,
           name: 'Mexican Burrito Bowl',
-          image: '../assets/burrito-bowls-15.jpg',
+          image: 'burrito-bowls-15.jpg',
           description: 'A deconstructed burrito, layered with rice, beans, grilled chicken, and fresh veggies.',
           ingredients: ['Rice', 'Black beans', 'Grilled chicken', 'Corn', 'Avocado', 'Sour cream'],
           preparationTime: 35,

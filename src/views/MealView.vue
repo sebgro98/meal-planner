@@ -5,7 +5,7 @@
     </header>
 
     <div class="container">
-      <img src="../assets/burger.jpg" alt="Meal Image" class="meal-image">
+      <img src="../../public/images/burger.jpg" alt="Meal Image" class="meal-image">
 
       <div class="title-container">
         <h2 class="image-title">Burger Delight</h2>
