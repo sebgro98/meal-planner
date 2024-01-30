@@ -1,16 +1,17 @@
 <template>
   <div id="app">
 
-    <router-view />
+    <HomePresenter/>
   </div>
 </template>
 
 <script>
 
+import HomePresenter from "@/presenters/HomePresenter.vue";
 export default {
   name: 'App',
   components: {
-
+    HomePresenter
   }
 };
 </script>

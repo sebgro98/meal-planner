@@ -1,23 +1,21 @@
 <template>
-  <div>
+  <div class="MenuView">
     <header>
-      <router-link to="/" class="go-back">Go back</router-link>
+      <h1 @click="backToHome">Go back</h1>
     </header>
 
     <div class="container">
-      <img src="../../public/images/burger.jpg" alt="Meal Image" class="meal-image">
+      <img :src="getImageUrl(meal.image)" alt="Meal Image" class="meal-image">
 
       <div class="title-container">
-        <h2 class="image-title">Burger Delight</h2>
+        <h2 class="image-title">{{meal.name}}</h2>
       </div>
 
       <div class="details-container">
         <div class="ingredients-container">
           <h2>Ingredients</h2>
           <ul class="ingredients-list">
-            <li>Ingredient 1</li>
-            <li>Ingredient 2</li>
-            <li>Ingredient 3</li>
+            <li v-for="(ingredient, index) in meal.ingredients" :key="index">{{ ingredient }}</li>
             <!-- Add more ingredients as needed -->
           </ul>
         </div>
@@ -25,11 +23,11 @@
         <div class="nutrition-container">
           <h2>Nutritional Information</h2>
           <ul class="nutrition-info">
-            <li>Cook Time: 30 minutes</li>
-            <li>Calories: 500</li>
-            <li>Carbs: 50g</li>
-            <li>Protein: 30g</li>
-            <li>Fat: 20g</li>
+            <li>Cook Time: {{meal.preparationTime}} minutes</li>
+            <li>Calories: {{meal.calories}}</li>
+            <li>Carbs: {{meal.carbs}}g</li>
+            <li>Protein: {{meal.protein}}g</li>
+            <li>Fat: {{meal.fat}}g</li>
           </ul>
         </div>
       </div>
@@ -37,9 +35,7 @@
       <div class="steps-container">
         <h2>Steps</h2>
         <ol class="steps-list">
-          <li>1. Lorem ipsum dolor sit amet.</li>
-          <li>2. Consectetur adipiscing elit.</li>
-          <li>3. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
+          <li v-for="(steps, index) in meal.steps" :key="index">{{ steps }}</li>
           <!-- Add more steps as needed -->
         </ol>
       </div>
@@ -50,15 +46,25 @@
 <script>
 export default {
   name: "MealView",
+  props: {
+    meal: Array,
+  },
+  methods: {
+    backToHome() {
+      this.$emit("back");
+    },
+    getImageUrl(imageName) {
+      // Directly return the path as the images are in the public folder
+      return `/images/${imageName}`;
+    },
+  }
 };
 </script>
 
 <style scoped>
+
 body {
   font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
 }
 
 header {
@@ -69,13 +75,14 @@ header {
   border-radius: 15px;
 }
 
-.go-back {
+header h1 {
   text-decoration: none;
   color: #fff;
   font-weight: bold;
   display: block; /* Make it a block-level element */
   padding: 10px; /* Add padding for better aesthetics */
   box-sizing: border-box; /* Include padding in width calculation */
+  font-size: 35px;
 }
 
 .container {

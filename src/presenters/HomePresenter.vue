@@ -1,8 +1,8 @@
 <template>
-  <FilterView/>
-  <shoppingListView/>
-  <HomeView :meals="meals" />
-  <MealView v v-if="selectedMeal" :meal="selectedMeal" @back="backToHome" />
+  <FilterView v-if="selectedMeal === null"/>
+  <shoppingListView v-if="selectedMeal === null"/>
+  <HomeView v-if="selectedMeal === null" :meals="meals" @showMealView = "showMeal"/>
+  <MealView v-if="selectedMeal" :meal="selectedMeal" @back="backToHome" />
 
 </template>
 
@@ -123,7 +123,7 @@ export default {
     };
   },
   methods: {
-    showMealPresenter(meal) {
+    showMeal(meal) {
       this.selectedMeal = meal;
     },
     backToHome() {
