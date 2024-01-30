@@ -12,7 +12,7 @@ import HomeView from "@/views/HomeView.vue";
   </header>
 
   <main>
-
+    <HomeView />
   </main>
 </template>
 
